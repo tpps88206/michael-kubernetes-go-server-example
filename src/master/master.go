@@ -5,9 +5,14 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
+var userServiceUrl string
+
 func main() {
+	userServiceUrl = os.Getenv("USER_SERVICE_PATH")
+
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", GetData).Methods("GET")
 
@@ -15,7 +20,7 @@ func main() {
 }
 
 func GetData(w http.ResponseWriter, r *http.Request) {
-	resp, _ := http.Get("http://user.default.svc.cluster.local:39000")
+	resp, _ := http.Get(userServiceUrl)
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
 	response := []byte(string(body))

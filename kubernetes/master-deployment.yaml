@@ -21,3 +21,6 @@ spec:
         ports:
         - name: api
           containerPort: 39000
+        env:
+          - name: USER_SERVICE_PATH
+            value: "http://user.default.svc.cluster.local:39000"
