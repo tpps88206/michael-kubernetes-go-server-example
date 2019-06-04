@@ -4,14 +4,14 @@ metadata:
   name: ingress
 spec:
   rules:
-    - host: 10.91.4.81
+    - host: localhost
       http:
         paths:
           - path: /
             backend:
               serviceName: master
               servicePort: 8080
-    - host: 10.91.4.81
+    - host: localhost
       http:
         paths:
           - path: /*
