@@ -10,11 +10,11 @@ spec:
           - path: /
             backend:
               serviceName: master
-              servicePort: 8080
+              servicePort: 39000
     - host: localhost
       http:
         paths:
           - path: /*
             backend:
               serviceName: master
-              servicePort: 8080
+              servicePort: 39000
