@@ -7,8 +7,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 39000
+      targetPort: 39000
       protocol: TCP
       name: master
   selector:
